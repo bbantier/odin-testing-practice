@@ -28,18 +28,17 @@ const caesarCipher = (string, shift) => {
   };
 
   charList.forEach((char) => {
-    const isLetter = (code) => {
-      return (
-        (code >= upperCaseASCII.min && code <= upperCaseASCII.max) ||
-        (code >= lowerCaseASCII.min && code <= lowerCaseASCII.max)
-      );
-    };
-
     const charCode = char.charCodeAt(0);
-    const shiftedCharCode = isLetter(charCode) ? charCode + shift : charCode;
+
+    const isLetter = (char) => {
+      const regex = /[A-Za-z]/;
+      return char.match(regex);
+    }
+    
+    const shiftedCharCode = isLetter(char) ? charCode + shift : charCode;
 
     const isOutOfBounds = (code) => {
-      if (isLetter(charCode)) {
+      if (isLetter(char)) {
         return (
           (code < lowerCaseASCII.min && code > upperCaseASCII.max) ||
           code > lowerCaseASCII.max
