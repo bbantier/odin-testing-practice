@@ -31,8 +31,7 @@ const caesarCipher = (string, shift) => {
     const charCode = char.charCodeAt(0);
 
     const isLetter = (char) => {
-      const regex = /[A-Za-z]/;
-      return char.match(regex);
+      return char.match(/[A-Za-z]/);
     }
     
     const shiftedCharCode = isLetter(char) ? charCode + shift : charCode;
@@ -57,3 +56,5 @@ const caesarCipher = (string, shift) => {
 };
 
 export { capitalize, reverseString, calculator, caesarCipher };
+
+console.log(caesarCipher("Hello World!", 3));
