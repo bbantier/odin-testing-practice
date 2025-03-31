@@ -14,7 +14,8 @@
   "author": "bbantier",
   "main": "script.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "watch": "jest --watch script.js"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
