@@ -1,0 +1,25 @@
+{
+  "name": "odin-testing-practice",
+  "version": "1.0.0",
+  "description": "This project is part of the \"JavaScript course\" from [The Odin Project](https://www.theodinproject.com/).",
+  "homepage": "https://github.com/bbantier/odin-testing-practice#readme",
+  "bugs": {
+    "url": "https://github.com/bbantier/odin-testing-practice/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbantier/odin-testing-practice.git"
+  },
+  "license": "ISC",
+  "author": "bbantier",
+  "type": "module",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "babel-jest": "^29.7.0"
+  }
+}
