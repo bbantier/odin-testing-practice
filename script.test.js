@@ -1,5 +1,9 @@
-import { capitalize } from "./script.js";
+import { capitalize, reverseString } from "./script.js";
 
-test("Capitalized 'camembert' should be 'Camembert'", () => {
+test("Capitalize function", () => {
   expect(capitalize("camembert")).toBe("Camembert");
+});
+
+test("reverseString function", () => {
+  expect(reverseString("camembert")).toBe("trebmemac");
 });
