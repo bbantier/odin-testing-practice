@@ -1,4 +1,9 @@
-import { capitalize, reverseString, calculator } from "./script.js";
+import {
+  capitalize,
+  reverseString,
+  calculator,
+  caesarCipher,
+} from "./script.js";
 
 test("capitalize function", () => {
   expect(capitalize("camembert")).toBe("Camembert");
@@ -22,4 +27,21 @@ test("calculator divide method", () => {
 
 test("calculator multiply method", () => {
   expect(calculator.multiply(6, 5)).toBe(30);
+});
+
+test("Caesar cipher: Base Case", () => {
+  expect(caesarCipher("camembert", 3)).toBe("fdphpehuw");
+  expect(caesarCipher("camembert", 4)).toBe("geqiqfivx");
+});
+
+test("Caesar cipher: Wrapping", () => {
+  expect(caesarCipher("xyz", 3)).toBe("abc");
+});
+
+test("Caesar cipher: Case preservation", () => {
+  expect(caesarCipher("Camembert", 3)).toBe("Fdphpehuw");
+});
+
+test("Caesar cipher: Ponctuation", () => {
+  expect(caesarCipher("camembert!", 3)).toBe("fdphpehuw!");
 });
