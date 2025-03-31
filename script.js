@@ -32,8 +32,8 @@ const caesarCipher = (string, shift) => {
 
     const isLetter = (char) => {
       return char.match(/[A-Za-z]/);
-    }
-    
+    };
+
     const shiftedCharCode = isLetter(char) ? charCode + shift : charCode;
 
     const isOutOfBounds = (code) => {
@@ -55,6 +55,22 @@ const caesarCipher = (string, shift) => {
   return String.fromCharCode(...charCodeList);
 };
 
-export { capitalize, reverseString, calculator, caesarCipher };
+const analyzeArray = (arr) => {
+  if (arr.some((item) => typeof item !== "number")) {
+    throw new Error("You should pass an array of numbers");
+  }
 
-console.log(caesarCipher("Hello World!", 3));
+  const getAverage = () => arr.reduce((prev, curr) => prev + curr) / arr.length;
+  const getMin = () => arr.sort((a, b) => a - b)[0];
+  const getMax = () => arr.sort((a, b) => a - b)[arr.length - 1];
+  const getLength = () => arr.length;
+
+  return {
+    average: getAverage(),
+    min: getMin(),
+    max: getMax(),
+    length: getLength(),
+  };
+};
+
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
